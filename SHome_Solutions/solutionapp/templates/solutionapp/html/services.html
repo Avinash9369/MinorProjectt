@@ -1,0 +1,49 @@
+{%extends 'solutionapp/html/base.html'%}
+{%load static%}
+{%block title%}OurServices{%endblock%}
+
+{%block content%}
+<style>
+
+.table{
+
+    background-color: aquamarine !important;
+}
+
+</style>
+<h1 style="text-align: center;color:whitesmoke;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 5rem;margin-bottom: 5%;"><u>Our Staffs</u>  </h1>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr >
+            <th scope="col">Employee_type</th>
+            <th scope="col">Charge_Per_Month</th>
+            <th scope="col">Other_details</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+            {% for e_type in emp_type %}
+          <tr>
+            <td><a href="/view_employee/{{e_type.employee_type}}">{{e_type.employee_type}}</a></td>
+            <td>{{e_type.charge_permonth}}</td>
+            <td>{{e_type.other_details}}</td>
+          </tr>
+          {%endfor%}
+        </tbody>
+        
+      </table>
+</div>
+
+
+
+<style>
+    body{
+        background-image: url("{%static 'solutionapp/images/BACK4.jpeg'%}");
+        background-size:cover;
+        
+    }
+
+ 
+</style>
+{%endblock%}

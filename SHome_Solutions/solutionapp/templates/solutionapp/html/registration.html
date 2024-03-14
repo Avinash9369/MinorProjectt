@@ -1,0 +1,115 @@
+{% extends 'solutionapp/html/base.html' %}
+{%load static%}
+{%block title%} Registration {%endblock%}
+
+{%block style%}
+body{background-color}
+h2{font-size:1rem}
+
+{%endblock%}
+
+
+<body >
+{%block content%}
+{% if messages%}
+
+{%for m in messages%}
+
+<div class="container" style="width: 60%;text-align: center;" >
+<div class="alert alert-dark alert-dismissible fade show" role="alert">
+    <strong>{{m}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+{%endfor%}
+
+{%endif%}
+
+    <form class="needs-validation" method="POST" action="/registration/" novalidate>
+        {%csrf_token%}
+        <div class="row justify-content-center">
+        <div class="col-5" style="margin: 5%; padding: 2%;border-radius: 1%;border: 2px solid black;">
+            <h1 style="text-align: center;margin-bottom: 2%;color:black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">REGISTRATION</h1>
+            <div class="mb-3">
+                <label for="id" class="form-label">Id</label>
+                <input type="text" name="userid" class="form-control" placeholder="Enter your id" required>
+                <div class="invalid-feedback">
+                Please enter your id 
+            </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Password" class="form-label">Password</label>
+                <input type="text" name="userpassword" class="form-control" placeholder="Enter your password" required>
+                <div class="invalid-feedback">
+                Please enter your password
+            </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter your name" required>
+            
+            <div class="invalid-feedback">
+                Please enter your name
+            </div>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label"> Phone</label>
+                <input type="number" name="userphone" class="form-control" placeholder="Enter your phone no." required>
+                <div class="invalid-feedback">
+                    Please enter your phone
+                </div>
+            </div>
+           
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea name="useraddress" class="form-control" placeholder="Enter your address"></textarea>
+                <div class="invalid-feedback">
+                    Please enter your address 
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="useremail" class="form-control" placeholder="Enter your email" required>
+                <div class="invalid-feedback">
+                    Please enter your email 
+                </div>
+            </div>
+            
+            
+            <div class="text-center">
+                <button class="btn btn-primary" style="border: 1px solid black;"> Submit</button> 
+
+            </div>
+
+
+
+            
+        </div>
+    </div>
+    </form>
+    <style>
+        body{
+            background-image: url("{%static 'solutionapp/images/back8.jpg'%}");
+            background-size: cover;
+            /* background-position: center ; */
+            /* background-repeat: no-repeat; */
+        }
+        .form-label{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color:black;
+        font-size: 1.1rem;
+    }
+    .form-control{
+        border: 1px solid black;
+    }
+    </style>
+{%endblock%}
+
+
+
+</body>
+

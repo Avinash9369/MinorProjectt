@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}  {%endblock%}</title>
+    <style>{%block style%}   {%endblock%}</style>
+    {%include 'solutionapp/common/common_css.html'%}
+
+</head>
+<body>
+    {%include 'solutionapp/common/navbar.html'%}
+    {%block content%}
+    
+    
+    {%endblock%} 
+
+
+    {%include 'solutionapp/common/common_js.html'%}
+
+     <script src="{% static 'solutionapp/js/validation.js'%}"></script>
+</body>
+</html>

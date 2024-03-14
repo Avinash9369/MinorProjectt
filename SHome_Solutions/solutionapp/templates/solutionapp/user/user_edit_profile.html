@@ -1,0 +1,35 @@
+{%extends "solutionapp/user/base.html"%}
+{%block title%}User Edit Profile {%endblock%}
+
+
+{%block content%}
+<!-- <h1 style="text-align: center;margin-bottom: 5%;">Edit profile</h1> -->
+<form method="POST" action="/user_edit_profile/">
+    {%csrf_token%}
+   <div class="card" style="width: 55%;height:auto;background-color: aliceblue;margin-left:22%;padding: 1%;margin-top: 3%;">
+    
+    <div class="card-body" >
+        
+        <h3 style="text-align: center;">Edit  Your Profile</h3>
+        <p class="card-text"><b>Name :</b>&nbsp;{{user_data.name}}
+        </p>
+        <p class="card-text"><b>Email :</b>
+            <input type="email" name="useremail" class="form-control" required value={{user_data.email}}>
+            
+        </p>
+        <p class="card-text"><b>Phone :</b>
+            <input type="number" name="userphone" class="form-control" required value={{user_data.phone}}>
+            
+        </p>
+        
+        <p class="card-text"><b>Address :</b>
+            <textarea name="useraddress" class="form-control" required>{{user_data.address}}</textarea>
+            
+        </p> 
+        <div class="text-center">
+            <button class="btn btn-success">Save Details</button>
+        </div> 
+    </div>
+   </div>
+</form>
+{%endblock%}

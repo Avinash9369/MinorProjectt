@@ -1,0 +1,72 @@
+{%extends "solutionapp/html/base.html"%}
+{%load static%}
+{%block title%} Login {%endblock%}
+
+
+{%block content%}
+
+{% if messages%}
+
+{%for m in messages%}
+
+<div class="container" style="width: 40%;text-align: center;">
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{m}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+{%endfor%}
+
+{%endif%}
+<form method="POST" action="/login/" class="needs-validation" novalidate >
+<div class="container  offset-3 w-50 h-50" style=" padding: 2%; border: solid 2px black;background-image: url('https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&w=400');margin-top: 5%;">
+
+    <h2 style="color:black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;margin-bottom: 5%;" class="offset-4 mt-2"> LOGIN FORM </h2>
+
+    {%csrf_token%} 
+<div class="input-group mb-3 w-50 offset-4" style="margin-left: 25%;">
+<span class="input-group-text"><i class="fas fa-user-alt "></i></span>
+<div class="form-floating">
+  <input type="text" class="form-control" placeholder="Enter User Id" name="userid" required>
+    <label for="floatingInput">UserID</label>
+    <div class="invalid-feedback">
+        Please enter valid userid
+    </div>
+</div>
+</div>
+
+<div class="input-group mb-3 w-50 offset-4" style="margin-left: 25%;">
+<span class="input-group-text"><i class="fas fa-key"></i></span>
+<div class="form-floating">
+  <input type="password" class="form-control" placeholder="Enter User Password" name="userpass" required>
+    <label for="floatingInput">UserPassword</label>
+    <div class="invalid-feedback">
+        Please enter valid password
+    </div>
+</div>
+
+</div>
+<div class="w-50 offset-5">
+<button class="btn btn-primary"><i class="fas fa-chevron-circle-right"></i>Submit</button>
+
+</div>
+<div class="w-50 offset-4" style="margin-top: 3%;">
+    Not a Member ? <a href="{{'/registration/'}}" style="text-decoration: none;">SignUp</a>
+</div>
+
+
+</div>
+
+</form>
+    <style>
+        body{
+            background-image: url("{%static 'solutionapp/images/BACK4.jpeg'%}");
+        }
+        .form-label{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color:white;
+    }
+    </style>
+{%endblock%} 
+

@@ -1,0 +1,33 @@
+{%extends "solutionapp/user/base.html"%}
+{%block title%} Dashboard {%endblock%}
+
+
+{%block content%}
+<!-- <marquee behavior="alternate" scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()" > -->
+<span style="text-align: center;font-size: 2.5rem;margin-left: 50%;">Welcome&nbsp;&nbsp;<span style="font-size: 2rem;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{user_data.name}}&nbsp;!!</span>&nbsp; How can I help You </span>
+<!-- </maquee> -->
+
+
+<div class="card" style="width: 50%;height:auto;background-color: aliceblue;padding: 1%;margin-left: 25%;margin-top: 5%;">
+    
+    <div class="card-body">
+        
+        <h3 style="text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 2.4rem;">Your Profile Details</h3>
+        <p class="card-text"><b>Name :</b>
+            {{user_data.name}}
+        </p>
+        <p class="card-text"><b>Email :</b>
+            {{user_data.email}}
+        </p>
+        <p class="card-text"><b>Phone :</b>
+            {{user_data.phone}}
+        </p>
+        
+        <p class="card-text"><b>Address :</b>
+            {{user_data.address}}
+        </p>  
+    </div>
+   </div>
+
+
+{%endblock%}
